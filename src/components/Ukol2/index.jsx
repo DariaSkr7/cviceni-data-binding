@@ -5,12 +5,17 @@ import { useState } from 'react';
 export const Ukol2 = () => {
   const [login, setLogin] = useState('petr');
 
+  const onChangeHandle = (e) => {
+    setLogin(e.target.value);
+    console.log(login);
+  };
+
   return (
     <>
       <h1>Úkol 2</h1>
       <label>
         Login:
-        <input type="text" />
+        <input value={login} onChange={onChangeHandle} type="text" />
       </label>
     </>
   );
